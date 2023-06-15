@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>
+            Учи английский, блядь, давай!
+        </title>
+        
+        <script src="lesson.js"></script>
+        <script src="index.js"></script>
+
+        <style>
+            ul {
+                list-style-type: none;
+            }
+
+            /* Remove margins and padding from the parent ul */
+            #LessonDirectory {
+                margin: 0;
+                padding: 0;
+            }
+
+
+            /* Style the caret/arrow */
+            .directory {
+            cursor: pointer;
+            user-select: none; /* Prevent text selection */
+            }
+
+            /* Create the caret/arrow with a unicode, and style it */
+            .directory::before {
+            content: "\25B6";
+            color: black;
+            display: inline-block;
+            margin-right: 6px;
+            }
+
+            /* Rotate the caret/arrow icon when clicked on (using JavaScript) */
+            .directory-down::before {
+            transform: rotate(90deg);
+            }
+        </style>
+    </head>
+    <body>
+
+        <header>MemoRRRizer</header>
+
+        <ul id="LessonDirectory">
+        </ul>
+
+    </body>
+</html>
