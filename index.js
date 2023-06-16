@@ -10,6 +10,7 @@ function RenderDirectory(){
     var directory = LessonHolder.Get().Directory;
     var directodyNode = document.getElementById('LessonDirectory');
     RenderDirectoryNode(directodyNode, directory.Childrens);
+
 }
 
 function RenderDirectoryNode(ulNode, childrenItems) {
@@ -24,14 +25,18 @@ function RenderDirectoryNode(ulNode, childrenItems) {
         if (item.IsLesson){
             li.innerHTML = item.Title
             li.dataset.lessonname = item.Lesson.Name
-            li.addEventListener('click', ()=>OnLessonClick(item.Lesson))
+            li.addEventListener('click', ()=> Navigator.OpenLessonInfo(item.Lesson))
         }
         else{
             let span = document.createElement('span')
             span.innerText = item.Title
             span.classList.add('directory')
-            li.appendChild(span)
             
+            span.addEventListener('click', (e)=>{
+                li.dataset.collapse = (li.dataset.collapse === "1") ? "0" : "1"
+            });
+            li.appendChild(span)
+            li.dataset.collapse=  "0"//"1"
 
             if (Array.isArray(item.Childrens)){
                 let ul = document.createElement('ul')

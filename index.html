@@ -1,50 +1,97 @@
 <html>
     <head>
-        <title>
-            Учи английский, блядь, давай!
-        </title>
+        <meta charset="UTF-8">
+        <title>MemoRRRizer</title>
         
         <script src="lesson.js"></script>
+        <script src="exam.js"></script>
         <script src="index.js"></script>
+        <script src="navigator.js"></script>
+        <link rel="stylesheet" href="index.css">
 
-        <style>
-            ul {
-                list-style-type: none;
-            }
-
-            /* Remove margins and padding from the parent ul */
-            #LessonDirectory {
-                margin: 0;
-                padding: 0;
-            }
-
-
-            /* Style the caret/arrow */
-            .directory {
-            cursor: pointer;
-            user-select: none; /* Prevent text selection */
-            }
-
-            /* Create the caret/arrow with a unicode, and style it */
-            .directory::before {
-            content: "\25B6";
-            color: black;
-            display: inline-block;
-            margin-right: 6px;
-            }
-
-            /* Rotate the caret/arrow icon when clicked on (using JavaScript) */
-            .directory-down::before {
-            transform: rotate(90deg);
-            }
-        </style>
     </head>
     <body>
 
         <header>MemoRRRizer</header>
+        <button id="MenuButton" onclick="Navigator.ClickMenu()"><span id="MenuButtonTitle">Меню</span></button>
+        <div id="content">
+            <div id="DirectoryPage">
+                <ul id="LessonDirectory">
+                </ul>
+            </div>
+            <div id="ExamPage">    
+                
+                <div id="TaskSection">
+                    <div id="TaskText"></div>
+                    <div id="LessonProgress">
+                        <div id="LessonProgressProgressBarGreen"></div>
+                        <div id="LessonProgressProgressBarRed"></div>
+                    </div>
+                    <div id="LessonAttempt"></div>
+                </div>
+                <div id="InputSection"> 
+                    <input type="text" id="LessonInput" autofocus  />
 
-        <ul id="LessonDirectory">
-        </ul>
+                    <div id="ButtonPanel">
+                        <button id="TipButton" onclick="Navigator.ClickTip()"><span id="TipButtonTitle">Подсказать</span></button>
+                        <button id="CheckButton" onclick="Navigator.ClickCommit()"><span id="CheckButtonTitle">Проверить</span></button>
+                    </div>
+                </div>
+                <div id="ResultSection"> 
+                    <div id="ResultText">
+                    </div>                
+                </div>
+            </div>
+        </div>
+        <div id="Menu">
+            <button id="MenuCancel" onclick="Navigator.CancelLesson()">Прервать урок</button>
+            <button id="MenuCurrentLesson"  onclick="Navigator.ShowCurrentLesson()">Текущий урок</button>
+            <button id="MenuInfo" onclick="Navigator.ShowInfo()">Инфо</button>
+        </div>
+        <div id="LessonInfo">
+            <label >
+                <span>Название урока</span>
+                <output id="LessonInfoName"></output>
+            </label>
+            <label >
+                <span>Язык</span>
+                <output id="LessonInfoLanguage"></output>
+            </label>
+            <label >
+                <span>Автор</span>
+                <output id="LessonInfoAuthor"></output>
+            </label>
+            <label >
+                <span>Последний результат</span>
+                <output id="LessonInfoLastResult"></output>
+            </label>
+            <button id="LessonInfoCloseButton" onclick="Navigator.CloseLessonInfo()">Закрыть</button>
+            <button id="LessonInfoStartButton" onclick="Navigator.StartLesson()">Начать тест</button>
+        </div>
+
+
+        <div id="LessonResult">
+            <h2>Завершено</h2>
+            <label >
+                <span>Название урока</span>
+                <output id="LessonResultName"></output>
+            </label>
+            <label >
+                <span>Всего слов</span>
+                <output id="LessonResultCount"></output>
+            </label>
+            <label >
+                <span>С 1 попытки</span>
+                <output id="LessonResultKnown"></output>
+            </label>
+            <label >
+                <span>Всего попыток</span>
+                <output id="LessonResultAttempt"></output>
+            </label>
+            <button id="LessonResultCloseButton" onclick="Navigator.CloseLessonResult()">Закрыть</button>
+            
+        </div>
+
 
     </body>
 </html>
