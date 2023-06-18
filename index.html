@@ -1,26 +1,24 @@
 <html>
     <head>
-        <meta charset="UTF-8">
         <title>MemoRRRizer</title>
-        
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         <script src="lesson.js"></script>
         <script src="exam.js"></script>
         <script src="index.js"></script>
         <script src="navigator.js"></script>
-        <link rel="stylesheet" href="index.css">
 
+        <link rel="stylesheet" href="/src/index.css" />
     </head>
     <body>
-
         <header>MemoRRRizer</header>
         <button id="MenuButton" onclick="Navigator.ClickMenu()"><span id="MenuButtonTitle">Меню</span></button>
         <div id="content">
             <div id="DirectoryPage">
-                <ul id="LessonDirectory">
-                </ul>
+                <ul id="LessonDirectory"></ul>
             </div>
-            <div id="ExamPage">    
-                
+            <div id="ExamPage">
                 <div id="TaskSection">
                     <div id="TaskText"></div>
                     <div id="LessonProgress">
@@ -29,39 +27,44 @@
                     </div>
                     <div id="LessonAttempt"></div>
                 </div>
-                <div id="InputSection"> 
-                    <input type="text" id="LessonInput" autofocus  />
+                <div id="InputSection">
+                    <input type="text" id="LessonInput" autofocus />
 
                     <div id="ButtonPanel">
-                        <button id="TipButton" onclick="Navigator.ClickTip()"><span id="TipButtonTitle">Подсказать</span></button>
-                        <button id="CheckButton" onclick="Navigator.ClickCommit()"><span id="CheckButtonTitle">Проверить</span></button>
+                        <button id="TipButton" onclick="Navigator.ClickTip()">
+                            <span id="TipButtonTitle">Подсказать</span>
+                        </button>
+                        <button id="CheckButton" onclick="Navigator.ClickCommit()">
+                            <span id="CheckButtonTitle">Проверить</span>
+                        </button>
                     </div>
                 </div>
-                <div id="ResultSection"> 
-                    <div id="ResultText">
-                    </div>                
+                <div id="ResultSection">
+                    <div id="ResultText"></div>
                 </div>
             </div>
         </div>
+
         <div id="Menu">
             <button id="MenuCancel" onclick="Navigator.CancelLesson()">Прервать урок</button>
-            <button id="MenuCurrentLesson"  onclick="Navigator.ShowCurrentLesson()">Текущий урок</button>
+            <button id="MenuCurrentLesson" onclick="Navigator.ShowCurrentLesson()">Текущий урок</button>
             <button id="MenuInfo" onclick="Navigator.ShowInfo()">Инфо</button>
         </div>
+
         <div id="LessonInfo">
-            <label >
+            <label>
                 <span>Название урока</span>
                 <output id="LessonInfoName"></output>
             </label>
-            <label >
+            <label>
                 <span>Язык</span>
                 <output id="LessonInfoLanguage"></output>
             </label>
-            <label >
+            <label>
                 <span>Автор</span>
                 <output id="LessonInfoAuthor"></output>
             </label>
-            <label >
+            <label>
                 <span>Последний результат</span>
                 <output id="LessonInfoLastResult"></output>
             </label>
@@ -69,61 +72,59 @@
             <button id="LessonInfoStartButton" onclick="Navigator.StartLesson()">Начать тест</button>
         </div>
 
-
         <div id="LessonResult">
             <h2>Завершено</h2>
-            <label >
+            <label>
                 <span>Название урока</span>
                 <output id="LessonResultName"></output>
             </label>
-            <label >
+            <label>
                 <span>Всего слов</span>
                 <output id="LessonResultCount"></output>
             </label>
-            <label >
+            <label>
                 <span>С 1 попытки</span>
                 <output id="LessonResultKnown"></output>
             </label>
-            <label >
+            <label>
                 <span>Всего попыток</span>
                 <output id="LessonResultAttempt"></output>
             </label>
             <button id="LessonResultCloseButton" onclick="Navigator.CloseLessonResult()">Закрыть</button>
-            
         </div>
 
         <div id="GlobalInfo">
-            
             <div id="GlobalInfoText">
-                <b>MemoRRRizer</b> - сервис зубрилка для изучения иностранных языков.</br>
+                <b>MemoRRRizer</b> - сервис зубрилка для изучения иностранных языков.<br />
                 <h3>Как пользоваться</h3>
-                Выберите урок из каталога уроков и нажмите "Начать тест"</br>
-                Сверу окна отобразиться текущее задание - слово и возможно дополнительная информация.</br>
-                Введите перевод и нажмите Enter или кнопку Проверить. </br>
-                Если ответ верный, вы перейдёте к следующему слову.</br>
-                Если не верный - нужно ввести слово ещё раз. </br> 
-                В случае неверного ответа или нажатия кнопки Подсказать текущее задание попадает в следующий круг.</br>
-                Когда вы ответите на последнее слово текущего круга, если хотя бы одно задание было выполненно неверно, начнётся следующий круг.</br>
-                Если все задания текущего круга были успешно завершены, тест завершится</br>
-                Прервать выполнение теста можно через Меню - Прервать урок</br>
-                </br>
+                Выберите урок из каталога уроков и нажмите "Начать тест"<br />
+                Сверу окна отобразиться текущее задание - слово и возможно дополнительная информация.<br />
+                Введите перевод и нажмите Enter или кнопку Проверить. <br />
+                Если ответ верный, вы перейдёте к следующему слову.<br />
+                Если не верный - нужно ввести слово ещё раз. <br />
+                В случае неверного ответа или нажатия кнопки Подсказать текущее задание попадает в следующий круг.<br />
+                Когда вы ответите на последнее слово текущего круга, если хотя бы одно задание было выполненно неверно,
+                начнётся следующий круг.<br />
+                Если все задания текущего круга были успешно завершены, тест завершится<br />
+                Прервать выполнение теста можно через Меню - Прервать урок<br />
+                <br />
                 <h3>Автор и условие пользования</h3>
-                Автор сервиса - El Ege (Евгении Ежов).</br>
-                Автор уроков указан в описании к урокам.</br>
-                Сервис свободен для использования и может быть использован любыми лицами с сайтов, принадлежащих автору.</br>
-                Для использования в коммерческих целях или размещения кода на сторонних ресурсах необходимо явное разрешение автора.</br>
+                Автор сервиса - El Ege (Евгении Ежов).<br />
+                Автор уроков указан в описании к урокам.<br />
+                Сервис свободен для использования и может быть использован любыми лицами с сайтов, принадлежащих
+                автору.<br />
+                Для использования в коммерческих целях или размещения кода на сторонних ресурсах необходимо явное
+                разрешение автора.<br />
                 <h3>Хранение результата</h3>
-                Результат хранится на вашем устройстве в LocalStorage и будет сброшен при смене устройства или при сбросе кеша.</br>
+                Результат хранится на вашем устройстве в LocalStorage и будет сброшен при смене устройства или при
+                сбросе кеша.<br />
                 Сервис не использует cookie и прочие механизмы для идентификации пользоваться.
                 <h3>Помощь проекту</h3>
-                Помочь проекту вы можете как автор уроков, предложив свои уроки через Merge Request по 
+                Помочь проекту вы можете как автор уроков, предложив свои уроки через Merge Request по
                 <a href="https://github.com/egecorp/memorrizer-web">ссылке на Github</a>
-
             </div>
 
             <button id="LessonResultCloseButton" onclick="Navigator.CloseInfo()">Закрыть</button>
-            
         </div>
-
     </body>
 </html>

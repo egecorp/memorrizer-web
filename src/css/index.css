@@ -3,7 +3,7 @@ ul {
     padding-inline-start: 10px;
 }
 
-li[data-collapse="1"] ul {
+li[data-collapse='1'] ul {
     display: none;
 }
 
@@ -14,41 +14,37 @@ li[data-collapse="1"] ul {
 
 .directory {
     cursor: pointer;
-    user-select: none; 
+    user-select: none;
 }
 
 li[data-lessonname] {
     cursor: pointer;
-    user-select: none; 
-
+    user-select: none;
 }
 
 .directory::before {
-    content: "\25B9";
+    content: '\25B9';
     color: black;
     display: inline-block;
     margin-right: 6px;
 }
 
-li[data-collapse="0"] > .directory::before {
-    content: "\25B5" !important;
+li[data-collapse='0'] > .directory::before {
+    content: '\25B5' !important;
 }
-    
 
-#MenuButton{
+#MenuButton {
     position: absolute;
     top: 1px;
-    left: 225px;;
+    left: 225px;
 }
-
 
 header {
     width: 100%;
     height: 5vh;
 }
 
-
-#content{
+#content {
     display: block;
     width: 100vw;
     height: 95vh;
@@ -57,27 +53,27 @@ header {
 }
 
 #DirectoryPage,
-#ExamPage{
+#ExamPage {
     position: absolute;
-    top:0px;
+    top: 0px;
     height: 100%;
     width: 100%;
 }
-#DirectoryPage{
-    left:0px;
+#DirectoryPage {
+    left: 0px;
     background-color: aquamarine;
     overflow-x: hidden;
     overflow-y: auto;
     display: block;
 }
 
-#ExamPage{
-    left:0px;
+#ExamPage {
+    left: 0px;
     background-color: antiquewhite;
     display: none;
 }
 
-#TaskSection{
+#TaskSection {
     background-color: whitesmoke;
     width: 100%;
     position: relative;
@@ -92,7 +88,7 @@ header {
     padding-top: 10px;
 }
 
-#LessonProgress{
+#LessonProgress {
     position: absolute;
     bottom: 2px;
     height: 10px;
@@ -102,23 +98,23 @@ header {
 }
 
 #LessonProgressProgressBarGreen,
-#LessonProgressProgressBarRed{
+#LessonProgressProgressBarRed {
     position: relative;
     height: 10px;
     float: left;
 }
 
-#LessonProgressProgressBarGreen{
+#LessonProgressProgressBarGreen {
     background-color: greenyellow;
     width: 30%;
 }
 
-#LessonProgressProgressBarRed{
+#LessonProgressProgressBarRed {
     background-color: red;
     width: 44%;
 }
 
-#LessonAttempt{
+#LessonAttempt {
     position: absolute;
     width: 130px;
     bottom: 2px;
@@ -129,7 +125,7 @@ header {
     margin-right: 10px;
 }
 
-#ResultSection{
+#ResultSection {
     margin-top: 20px;
     background-color: wheat;
     width: 100%;
@@ -140,32 +136,31 @@ header {
     width: 100%;
     text-align: center;
     padding-top: 10px;
-}      
+}
 
-
-#InputSection{
-    margin-top:5px;
-    margin-bottom:5px;
+#InputSection {
+    margin-top: 5px;
+    margin-bottom: 5px;
     position: relative;
     height: 50px;
 }
 
-#LessonInput{
+#LessonInput {
     position: absolute;
     margin-left: 5px;
     margin-right: 5px;
     width: 95%;
-    top:0px;
+    top: 0px;
     font-size: 14;
 }
 
-#ButtonPanel{
+#ButtonPanel {
     position: absolute;
-    top:30px;
+    top: 30px;
     display: flex;
 }
 
-#ButtonPanel button{
+#ButtonPanel button {
     margin-left: 5px;
     margin-right: 5px;
     font-size: 16;
@@ -176,7 +171,7 @@ header {
     z-index: 2;
     display: none;
     position: fixed;
-    background-color: rgb(201,201,201);
+    background-color: rgb(201, 201, 201);
     width: 280px;
     height: 250px;
     left: 17px;
@@ -184,9 +179,8 @@ header {
     border: 1px solid;
 }
 
-#LessonResult{
+#LessonResult {
     height: 285px !important;
-
 }
 
 #LessonInfo span,
@@ -201,7 +195,7 @@ header {
     display: block;
     font-weight: bold;
     width: 94%;
-    
+
     height: 18px;
     padding: 2px;
     border: 1px solid;
@@ -209,9 +203,9 @@ header {
     margin-left: 2%;
 }
 
-#LessonInfo  button,
+#LessonInfo button,
 #LessonResult button {
-    float:left;
+    float: left;
     margin-top: 10px;
     margin-left: 20px;
     font-size: 16px;
@@ -221,7 +215,7 @@ header {
     z-index: 2;
     display: none;
     position: fixed;
-    background-color: rgb(201,201,201);
+    background-color: rgb(201, 201, 201);
     width: 96%;
     height: 30vh;
     left: 17px;
@@ -233,22 +227,20 @@ header {
     width: 100%;
 }
 
-
-#GlobalInfo{
+#GlobalInfo {
     z-index: 3;
     display: none;
     position: fixed;
-    background-color: rgb(201,201,201);
+    background-color: rgb(201, 201, 201);
     width: 98%;
     height: 30vh;
     left: 17px;
     border: 1px solid;
 }
-            
-#GlobalInfoText{
+
+#GlobalInfoText {
     overflow-y: scroll;
-    width:100%;
+    width: 100%;
     height: 100%;
     padding: 3px;
-    
 }
