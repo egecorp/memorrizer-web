@@ -1,0 +1,1 @@
+:root{--light: 300;--regular: 400;--bold: 700;--primary: #1b72d2}html,body{width:100vw;height:100vh}body{font-family:"Inter",sans-serif;font-size:14px;font-weight:var(--regular)}

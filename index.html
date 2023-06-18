@@ -9,32 +9,65 @@
         <script src="index.js"></script>
         <script src="navigator.js"></script>
 
-        <link rel="stylesheet" href="/src/index.css" />
+        <!-- Css -->
+        <link rel="stylesheet" href="./src/css/reset.min.css" />
+        <link rel="stylesheet" href="./src/css/global.min.css" />
+        <link rel="stylesheet" href="./src/css/index.min.css" />
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Open+Sans:ital,wght@0,400;0,700;1,300&display=swap"
+            rel="stylesheet"
+        />
     </head>
-    <body>
-        <header>MemoRRRizer</header>
-        <button id="MenuButton" onclick="Navigator.ClickMenu()"><span id="MenuButtonTitle">Меню</span></button>
-        <div id="content">
-            <div id="DirectoryPage">
-                <ul id="LessonDirectory"></ul>
+    <body class="body">
+        <header class="header">
+            <p class="header__title">MemoRRRizer</p>
+
+            <button class="header__button" id="MenuButton" onclick="Navigator.ClickMenu()">
+                <p id="MenuButtonTitle">Меню</p>
+            </button>
+        </header>
+
+        <div class="content" id="content">
+            <div class="explorer" id="DirectoryPage">
+                <ul class="explorer__list" id="LessonDirectory"></ul>
             </div>
+
             <div id="ExamPage">
                 <div id="TaskSection">
                     <div id="TaskText"></div>
-                    <div id="LessonProgress">
-                        <div id="LessonProgressProgressBarGreen"></div>
-                        <div id="LessonProgressProgressBarRed"></div>
+
+                    <div class="info">
+                        <div id="LessonProgress">
+                            <div id="LessonProgressProgressBarGreen"></div>
+                            <div id="LessonProgressProgressBarRed"></div>
+                        </div>
+
+                        <div id="LessonAttempt"></div>
                     </div>
-                    <div id="LessonAttempt"></div>
                 </div>
                 <div id="InputSection">
                     <input type="text" id="LessonInput" autofocus />
 
                     <div id="ButtonPanel">
-                        <button id="TipButton" onclick="Navigator.ClickTip()">
+                        <button
+                            class="buttonSimple"
+                            data-variant="secondary"
+                            id="TipButton"
+                            onclick="Navigator.ClickTip()"
+                        >
                             <span id="TipButtonTitle">Подсказать</span>
                         </button>
-                        <button id="CheckButton" onclick="Navigator.ClickCommit()">
+
+                        <button
+                            class="buttonSimple"
+                            data-variant="primary"
+                            id="CheckButton"
+                            onclick="Navigator.ClickCommit()"
+                        >
                             <span id="CheckButtonTitle">Проверить</span>
                         </button>
                     </div>
@@ -68,8 +101,25 @@
                 <span>Последний результат</span>
                 <output id="LessonInfoLastResult"></output>
             </label>
-            <button id="LessonInfoCloseButton" onclick="Navigator.CloseLessonInfo()">Закрыть</button>
-            <button id="LessonInfoStartButton" onclick="Navigator.StartLesson()">Начать тест</button>
+
+            <div class="buttonBox">
+                <button
+                    class="buttonSimple"
+                    data-variant="secondary"
+                    id="LessonInfoCloseButton"
+                    onclick="Navigator.CloseLessonInfo()"
+                >
+                    Закрыть
+                </button>
+                <button
+                    class="buttonSimple"
+                    data-variant="primary"
+                    id="LessonInfoStartButton"
+                    onclick="Navigator.StartLesson()"
+                >
+                    Начать тест
+                </button>
+            </div>
         </div>
 
         <div id="LessonResult">
@@ -90,6 +140,7 @@
                 <span>Всего попыток</span>
                 <output id="LessonResultAttempt"></output>
             </label>
+
             <button id="LessonResultCloseButton" onclick="Navigator.CloseLessonResult()">Закрыть</button>
         </div>
 

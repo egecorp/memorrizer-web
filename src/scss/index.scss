@@ -1,0 +1,290 @@
+.body {
+    display: grid;
+    gap: 8px;
+    grid-template-rows: max-content 1fr;
+}
+
+.header {
+    padding: 4px 12px;
+    height: 48px;
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    gap: 12px;
+
+    &__title {
+        font-size: 16px;
+        font-weight: var(--bold);
+    }
+    &__button {
+        background: unset;
+        border: unset;
+
+        p {
+            color: var(--primary);
+            font-size: 15px;
+            font-weight: var(--bold);
+        }
+    }
+}
+
+.content {
+    background: #cccccc24;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+    outline: 1px solid #e3e3e3;
+
+    > .explorer {
+        height: 100%;
+    }
+}
+
+%explorerItem {
+    font-size: 16px;
+    padding: 2px 0;
+    user-select: none;
+    cursor: pointer;
+}
+
+.explorer {
+    $p: &;
+
+    padding: 12px;
+
+    &__list {
+        list-style-type: none;
+
+        ul {
+            list-style: none;
+            padding-left: 12px;
+        }
+    }
+
+    &__item {
+        display: block;
+
+        @extend %explorerItem;
+
+        &::before {
+            content: '\25B9';
+            color: black;
+            display: inline-block;
+            margin-right: 6px;
+        }
+    }
+
+    [data-collapse='0'] > #{$p}__item::before {
+        transform: rotate(90deg);
+    }
+    [data-collapse='1'] ul {
+        display: none;
+    }
+
+    [data-lessonname] {
+        @extend %explorerItem;
+    }
+}
+
+.info {
+    padding: 4px 12px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: max-content;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+// prev
+
+// #DirectoryPage,
+// #ExamPage {
+//     position: absolute;
+//     top: 0px;
+//     height: 100%;
+//     width: 100%;
+// }
+// #DirectoryPage {
+//     left: 0px;
+//     background-color: aquamarine;
+//     overflow-x: hidden;
+//     overflow-y: auto;
+//     display: block;
+// }
+
+#ExamPage {
+    // left: 0px;
+    // background-color: antiquewhite;
+    display: none;
+}
+
+#TaskSection {
+}
+
+#TaskText {
+    text-align: center;
+    margin: 20px 12px;
+    padding: 20px 12px;
+    border-radius: 12px;
+    background: #f49857;
+    font-size: 18px;
+    font-weight: var(--bold);
+}
+
+#LessonProgress {
+    height: 16px;
+    border-radius: 3px;
+    background-color: #f9e0bb;
+    width: 160px;
+    overflow: hidden;
+}
+
+#LessonProgressProgressBarGreen,
+#LessonProgressProgressBarRed {
+    position: relative;
+    height: 100%;
+    float: left;
+}
+
+#LessonProgressProgressBarGreen {
+    background-color: greenyellow;
+    width: 30%;
+}
+
+#LessonProgressProgressBarRed {
+    background-color: #f45757;
+    width: 44%;
+}
+
+#LessonAttempt {
+    font-size: 12px;
+    text-align: right;
+}
+
+#ResultSection {
+    margin-top: 20px;
+    width: 100%;
+    position: relative;
+    height: 150px;
+}
+#ResultText {
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#InputSection {
+    position: relative;
+    padding: 12px;
+}
+
+#LessonInput {
+    border: 1px solid #d3d3d3;
+    padding: 4px 8px;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 6px;
+    min-height: 38px;
+}
+
+.buttonSimple {
+    font-size: 16px;
+    padding: 2px 8px;
+    border: unset;
+    border-radius: 6px;
+
+    &[data-variant='primary'] {
+        background: #f9e0bb;
+    }
+    &[data-variant='secondary'] {
+        color: #000;
+        background: #f9e0bb61;
+        border: 1px solid #f9e0bb;
+    }
+}
+
+#ButtonPanel {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+#LessonInfo,
+#LessonResult {
+    z-index: 2;
+    display: none;
+    position: fixed;
+    padding: 12px;
+    top: 100px;
+    left: 20px;
+    right: 20px;
+    border-radius: 16px;
+    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+    outline: 1px solid #c68456;
+    background: #f49857;
+}
+
+#LessonResult {
+    height: 285px !important;
+}
+
+#LessonInfo {
+    .buttonBox {
+        margin-top: 20px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+    }
+}
+
+#LessonInfo span,
+#LessonResult span {
+    padding: 6px 0;
+    display: block;
+    font-size: 15px;
+    font-weight: var(--bold);
+}
+
+#LessonInfo output,
+#LessonResult output {
+    display: block;
+    padding: 6px 4px;
+    min-height: 34px;
+    background-color: #fff;
+    border-radius: 4px;
+    font-weight: var(--regular);
+}
+
+#Menu {
+    z-index: 2;
+    display: none;
+    position: fixed;
+    background-color: rgb(201, 201, 201);
+    width: 96%;
+    height: 30vh;
+    left: 17px;
+    border: 1px solid;
+}
+
+#Menu button {
+    display: block;
+    width: 100%;
+}
+
+#GlobalInfo {
+    z-index: 3;
+    display: none;
+    position: fixed;
+    background-color: rgb(201, 201, 201);
+    width: 98%;
+    height: 30vh;
+    left: 17px;
+    border: 1px solid;
+}
+
+#GlobalInfoText {
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    padding: 3px;
+}
