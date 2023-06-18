@@ -222,8 +222,8 @@ header {
     display: none;
     position: fixed;
     background-color: rgb(201,201,201);
-    width: 280px;
-    height: 100px;
+    width: 96%;
+    height: 30vh;
     left: 17px;
     border: 1px solid;
 }
@@ -231,4 +231,24 @@ header {
 #Menu button {
     display: block;
     width: 100%;
+}
+
+
+#GlobalInfo{
+    z-index: 3;
+    display: none;
+    position: fixed;
+    background-color: rgb(201,201,201);
+    width: 98%;
+    height: 30vh;
+    left: 17px;
+    border: 1px solid;
+}
+            
+#GlobalInfoText{
+    overflow-y: scroll;
+    width:100%;
+    height: 100%;
+    padding: 3px;
+    
 }

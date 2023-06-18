@@ -17,7 +17,7 @@ class NavigatorClass{
     #LessonResultCount
     #LessonResultKnown
     #LessonResultAttempt
-
+    #GlobalInfo
 
 
     #DirectoryPage
@@ -45,6 +45,8 @@ class NavigatorClass{
         this.#LessonResultKnown = document.getElementById('LessonResultKnown');
         this.#LessonResultAttempt = document.getElementById('LessonResultAttempt');
 
+        this.#GlobalInfo = document.getElementById('GlobalInfo');
+        
     }
 
 
@@ -131,6 +133,15 @@ class NavigatorClass{
             this.#isMenuOpen = true
         }
     }
+
+    ShowInfo(){
+        this.#GlobalInfo.style.display = 'block';
+    }
+
+    CloseInfo(){
+        this.#GlobalInfo.style.display = 'none';
+    }
+
 }
 
 var Navigator = null;
