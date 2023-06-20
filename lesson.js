@@ -66,5 +66,34 @@ Lesson.GetFromServer = function(){
     lesson3.Name = 'Lesson 3'
     lesson3.Group = 'Serbian.Starter.Pridevi'
 
-    return [lesson1, lesson2, lesson3]
+
+
+
+
+    return [lesson1, lesson2, lesson3,
+
+        English.Lesson1,
+        English.Lesson2,
+        English.Lesson3,
+        English.Lesson4,
+        English.Lesson5,
+        English.Lesson6,
+        English.Lesson7,
+        English.Lesson8,
+        English.Lesson9,
+        English.Lesson10,
+        English.Lesson11,
+        English.Lesson12,
+        English.Lesson13,
+
+        Serbian.Lesson1,
+        Serbian.Lesson2,
+        Serbian.Lesson3,
+        Serbian.Lesson4,
+        Serbian.Lesson5,
+        Serbian.Lesson6,
+        Serbian.Lesson7,
+        Serbian.Lesson8,
+
+    ]
 }
