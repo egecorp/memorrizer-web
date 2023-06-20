@@ -180,8 +180,8 @@
     &[data-bg-color='wheat'] {
         background: wheat;
     }
-    &[data-bg-color='yellow'] {
-        background: yellow;
+    &[data-bg-color='pink'] {
+        background: var(--pink-pale);
     }
 }
 #ResultText {

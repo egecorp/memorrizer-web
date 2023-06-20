@@ -112,7 +112,7 @@ class Exam {
             for (var synonym of this.CurrentWord.Synonyms) {
                 if (synonym === word) {
                     this.#ResultText.innerText = 'Нужен синоним'
-                    this.#ResultSection.dataset.bgColor = 'yellow'
+                    this.#ResultSection.dataset.bgColor = 'pink'
                     return
                 }
             }
