@@ -31,6 +31,12 @@ function RenderDirectoryNode(ulNode, childrenItems) {
             span.addEventListener('click', (e) => {
                 li.dataset.collapse = li.dataset.collapse === '1' ? '0' : '1'
             })
+
+            let icon = document.createElement('i')
+            icon.classList.add('icon')
+            icon.dataset.iconName = 'arrow-angle-right'
+            span.prepend(icon)
+
             li.appendChild(span)
             li.dataset.collapse = '0' //"1"
 

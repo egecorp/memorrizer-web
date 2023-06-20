@@ -1,6 +1,7 @@
+@use './global' as *;
+
 .body {
     display: grid;
-    gap: 8px;
     grid-template-rows: max-content 1fr;
 }
 
@@ -11,10 +12,11 @@
     grid-template-columns: 1fr max-content;
     align-items: center;
     gap: 12px;
+    border-bottom: 1px solid var(--divider);
 
     &__title {
         font-size: 16px;
-        font-weight: var(--bold);
+        font-weight: var(--semibold);
     }
     &__button {
         background: unset;
@@ -23,25 +25,18 @@
         p {
             color: var(--primary);
             font-size: 15px;
-            font-weight: var(--bold);
+            font-weight: var(--medium);
         }
     }
 }
 
 .content {
-    background: #cccccc24;
-    border-radius: 16px 16px 0 0;
-    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
-    outline: 1px solid #e3e3e3;
-
-    > .explorer {
-        height: 100%;
-    }
+    background: var(--bg-2);
 }
 
 %explorerItem {
+    padding: 6px 12px;
     font-size: 16px;
-    padding: 2px 0;
     user-select: none;
     cursor: pointer;
 }
@@ -49,7 +44,11 @@
 .explorer {
     $p: &;
 
-    padding: 12px;
+    margin: 8px;
+    height: calc(100% - 8px * 2);
+    border-radius: var(--br-modal);
+    background: var(--white);
+    overflow: hidden;
 
     &__list {
         list-style-type: none;
@@ -61,20 +60,25 @@
     }
 
     &__item {
-        display: block;
+        display: flex;
+        align-items: center;
+        gap: 10px;
 
         @extend %explorerItem;
 
-        &::before {
-            content: '\25B9';
-            color: black;
-            display: inline-block;
-            margin-right: 6px;
+        .icon {
+            --icon-width: 12px;
+            --icon-height: 12px;
+            --icon-background: var(--gray);
+
+            transition: var(--transition);
         }
     }
 
-    [data-collapse='0'] > #{$p}__item::before {
-        transform: rotate(90deg);
+    [data-collapse='0'] > #{$p}__item {
+        .icon {
+            transform: rotate(90deg);
+        }
     }
     [data-collapse='1'] ul {
         display: none;
@@ -85,49 +89,44 @@
     }
 }
 
-.info {
-    padding: 4px 12px;
+// prev
+#ExamPage {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+
+    &[data-show='0'] {
+        display: none;
+    }
+}
+
+#TaskSection {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#TaskText {
+    padding: 12px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: var(--primary-600);
+    color: var(--white);
+    font-size: 18px;
+    font-weight: var(--semibold);
+    text-align: center;
+}
+
+#LessonProgressBox {
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: max-content;
     justify-content: space-between;
     gap: 12px;
-}
-
-// prev
-
-// #DirectoryPage,
-// #ExamPage {
-//     position: absolute;
-//     top: 0px;
-//     height: 100%;
-//     width: 100%;
-// }
-// #DirectoryPage {
-//     left: 0px;
-//     background-color: aquamarine;
-//     overflow-x: hidden;
-//     overflow-y: auto;
-//     display: block;
-// }
-
-#ExamPage {
-    // left: 0px;
-    // background-color: antiquewhite;
-    display: none;
-}
-
-#TaskSection {
-}
-
-#TaskText {
-    text-align: center;
-    margin: 20px 12px;
-    padding: 20px 12px;
-    border-radius: 12px;
-    background: #f49857;
-    font-size: 18px;
-    font-weight: var(--bold);
 }
 
 #LessonProgress {
@@ -151,59 +150,76 @@
 }
 
 #LessonProgressProgressBarRed {
-    background-color: #f45757;
+    background-color: var(--red);
     width: 44%;
 }
 
 #LessonAttempt {
-    font-size: 12px;
+    font-size: 14px;
     text-align: right;
 }
 
 #ResultSection {
-    margin-top: 20px;
-    width: 100%;
     position: relative;
-    height: 150px;
+    margin-top: 4px;
+    padding: 12px;
+    width: 100%;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+
+    &[data-bg-color='red'] {
+        background: var(--red-pale);
+    }
+    &[data-bg-color='green'] {
+        background: var(--green-pale);
+    }
+    &[data-bg-color='wheat'] {
+        background: wheat;
+    }
+    &[data-bg-color='yellow'] {
+        background: yellow;
+    }
 }
 #ResultText {
-    width: 100%;
+    font-size: 15px;
     text-align: center;
-    padding-top: 10px;
 }
 
 #InputSection {
     position: relative;
-    padding: 12px;
+    padding: 16px 0;
 }
 
 #LessonInput {
-    border: 1px solid #d3d3d3;
     padding: 4px 8px;
     width: 100%;
-    font-size: 16px;
-    border-radius: 6px;
     min-height: 38px;
+    font-size: 16px;
+
+    @extend %input;
 }
 
 .buttonSimple {
-    font-size: 16px;
-    padding: 2px 8px;
+    padding: 4px 10px;
     border: unset;
-    border-radius: 6px;
+    border-radius: 100px;
+    font-size: 14px;
 
     &[data-variant='primary'] {
-        background: #f9e0bb;
+        color: var(--white);
+        font-weight: var(--medium);
+        background: var(--primary);
     }
     &[data-variant='secondary'] {
-        color: #000;
-        background: #f9e0bb61;
-        border: 1px solid #f9e0bb;
+        background: var(--divider);
     }
 }
 
 #ButtonPanel {
-    margin-top: 20px;
+    margin-top: 16px;
     display: flex;
     gap: 12px;
     justify-content: flex-end;
@@ -211,17 +227,15 @@
 
 #LessonInfo,
 #LessonResult {
-    z-index: 2;
-    display: none;
     position: fixed;
-    padding: 12px;
     top: 100px;
-    left: 20px;
-    right: 20px;
-    border-radius: 16px;
-    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
-    outline: 1px solid #c68456;
-    background: #f49857;
+    left: 12px;
+    right: 12px;
+    z-index: 2;
+    padding: 12px;
+    display: none;
+
+    @extend %modal;
 }
 
 #LessonResult {
@@ -229,6 +243,9 @@
 }
 
 #LessonInfo {
+    > label:not(:first-child) {
+        margin-top: 4px;
+    }
     .buttonBox {
         margin-top: 20px;
         display: flex;
@@ -242,44 +259,80 @@
     padding: 6px 0;
     display: block;
     font-size: 15px;
-    font-weight: var(--bold);
+    font-weight: var(--semibold);
 }
 
 #LessonInfo output,
 #LessonResult output {
     display: block;
-    padding: 6px 4px;
+    padding: 8px;
     min-height: 34px;
-    background-color: #fff;
-    border-radius: 4px;
     font-weight: var(--regular);
+
+    @extend %input;
 }
 
 #Menu {
-    z-index: 2;
-    display: none;
+    padding: 12px;
     position: fixed;
-    background-color: rgb(201, 201, 201);
-    width: 96%;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    z-index: 2;
     height: 30vh;
-    left: 17px;
-    border: 1px solid;
-}
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow: hidden;
 
-#Menu button {
-    display: block;
-    width: 100%;
+    @extend %modal;
+
+    &[data-show='0'] {
+        display: none;
+    }
+
+    button {
+        padding: 6px 12px;
+        display: flex;
+        align-items: center;
+        min-height: 36px;
+        border: unset;
+        font-size: 15px;
+        background: var(--divider);
+        border-radius: 8px;
+    }
 }
 
 #GlobalInfo {
-    z-index: 3;
-    display: none;
+    --global-info-padding: 12px;
+
     position: fixed;
-    background-color: rgb(201, 201, 201);
-    width: 98%;
-    height: 30vh;
-    left: 17px;
-    border: 1px solid;
+    inset: 12px;
+    z-index: 3;
+    padding: var(--global-info-padding);
+
+    &[data-show='0'] {
+        display: none;
+    }
+
+    @extend %modal;
+
+    #LessonResultCloseButton {
+        position: absolute;
+        right: var(--global-info-padding);
+        z-index: 5;
+        padding: 10px;
+        border: unset;
+        border-radius: 100px;
+        background: var(--primary);
+        box-shadow: var(--bs-float-button);
+
+        .icon {
+            --icon-width: 12px;
+            --icon-height: 12px;
+            --icon-background: var(--white);
+        }
+    }
 }
 
 #GlobalInfoText {

@@ -17,10 +17,7 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Open+Sans:ital,wght@0,400;0,700;1,300&display=swap"
-            rel="stylesheet"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
     </head>
     <body class="body">
         <header class="header">
@@ -36,11 +33,11 @@
                 <ul class="explorer__list" id="LessonDirectory"></ul>
             </div>
 
-            <div id="ExamPage">
+            <div id="ExamPage" data-show="0">
                 <div id="TaskSection">
                     <div id="TaskText"></div>
 
-                    <div class="info">
+                    <div id="LessonProgressBox">
                         <div id="LessonProgress">
                             <div id="LessonProgressProgressBarGreen"></div>
                             <div id="LessonProgressProgressBarRed"></div>
@@ -78,7 +75,7 @@
             </div>
         </div>
 
-        <div id="Menu">
+        <div id="Menu" data-show="0">
             <button id="MenuCancel" onclick="Navigator.CancelLesson()">Прервать урок</button>
             <button id="MenuCurrentLesson" onclick="Navigator.ShowCurrentLesson()">Текущий урок</button>
             <button id="MenuInfo" onclick="Navigator.ShowInfo()">Инфо</button>
@@ -144,7 +141,11 @@
             <button id="LessonResultCloseButton" onclick="Navigator.CloseLessonResult()">Закрыть</button>
         </div>
 
-        <div id="GlobalInfo">
+        <div id="GlobalInfo" data-show="0">
+            <button id="LessonResultCloseButton" onclick="Navigator.CloseInfo()">
+                <i class="icon" data-icon-name="cross"></i>
+            </button>
+
             <div id="GlobalInfoText">
                 <b>MemoRRRizer</b> - сервис зубрилка для изучения иностранных языков.<br />
                 <h3>Как пользоваться</h3>
@@ -174,8 +175,6 @@
                 Помочь проекту вы можете как автор уроков, предложив свои уроки через Merge Request по
                 <a href="https://github.com/egecorp/memorrizer-web">ссылке на Github</a>
             </div>
-
-            <button id="LessonResultCloseButton" onclick="Navigator.CloseInfo()">Закрыть</button>
         </div>
     </body>
 </html>

@@ -53,7 +53,7 @@ class Exam {
         this.CurrentWordIsFail = false
         this.CurrentWord = this.Words[this.CurrentWordPosition]
         this.Render()
-        this.#ResultSection.style.backgroundColor = 'wheat'
+        this.#ResultSection.dataset.bgColor = 'wheat'
     }
 
     SelectNext() {
@@ -105,14 +105,14 @@ class Exam {
             if (this.CurrentWordIsFail === false) {
                 this.Done.push(this.CurrentWord)
             }
-            this.#ResultSection.style.backgroundColor = '#d3fbdb'
+            this.#ResultSection.dataset.bgColor = 'green'
 
             this.SelectNext()
         } else {
             for (var synonym of this.CurrentWord.Synonyms) {
                 if (synonym === word) {
                     this.#ResultText.innerText = 'Нужен синоним'
-                    this.#ResultSection.style.backgroundColor = 'yellow'
+                    this.#ResultSection.dataset.bgColor = 'yellow'
                     return
                 }
             }
@@ -123,7 +123,7 @@ class Exam {
                 this.Failed.push(this.CurrentWord)
                 this.CurrentWordIsFail = true
             }
-            this.#ResultSection.style.backgroundColor = '#ffa9a9'
+            this.#ResultSection.dataset.bgColor = 'red'
 
             this.Render(true)
         }
@@ -136,7 +136,7 @@ class Exam {
             this.CurrentWordIsFail = true
         }
         this.Render()
-        this.#ResultSection.style.backgroundColor = 'wheat'
+        this.#ResultSection.dataset.bgColor = 'wheat'
     }
 
     Shuffle() {
