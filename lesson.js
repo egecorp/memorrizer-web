@@ -88,7 +88,8 @@ Lesson.GetFromServer = function(){
 
         Serbian.Lesson1,
         Serbian.Lesson2,
-        Serbian.Lesson3,
+        Serbian.Lesson3_1,
+        Serbian.Lesson3_2,
         Serbian.Lesson4,
         Serbian.Lesson5,
         Serbian.Lesson6,
