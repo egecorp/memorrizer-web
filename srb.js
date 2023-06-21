@@ -190,15 +190,15 @@ Serbian.Lesson2 = {
     ]
 }
 
-Serbian.Lesson3 = {
+Serbian.Lesson3_1 = {
     LessonType : 'srb',
-    Name : 'Глаголы',
+    Name : 'Глаголы часть 1',
     Directory : 'Сербский.Начало',
     Author : 'El Ege',
     Version : 1,
     Words : [
         {"title":"бежать","answer":"трчати", synonyms:[] },
-        {"title":"бояться","answer":"плашити се,бојати се", synonyms:[] },
+        {"title":"бояться","answer":"плашити се", synonyms:["бојати се"] },
         {"title":"брать","answer":"брати", synonyms:[] },
         {"title":"быть","answer":"бити", synonyms:[] },
         {"title":"видеть","answer":"видети", synonyms:[] },
@@ -215,7 +215,8 @@ Serbian.Lesson3 = {
         {"title":"думать","answer":"мислити", synonyms:[] },
         {"title":"жаловаться","answer":"жалити се", synonyms:[] },
         {"title":"ждать","answer":"чекати", synonyms:[] },
-        {"title":"забывать","answer":"заборављати", synonyms:[] },
+        {"title":"требовать","answer":"захтевати", synonyms:[] },
+        {"title":"забывать","answer":"заборавити", synonyms:[] },
         {"title":"завтракать","answer":"доручковати", synonyms:[] },
         {"title":"заказывать","answer":"наручивати", synonyms:[] },
         {"title":"заканчивать","answer":"завршавати", synonyms:[] },
@@ -249,7 +250,7 @@ Serbian.Lesson3 = {
         {"title":"наказывать","answer":"кажњавати", synonyms:[] },
         {"title":"настаивать(упорствовать)","answer":"инсистрирати", synonyms:[] },
         {"title":"находить","answer":"налазити", synonyms:[] },
-        {"title":"начинать","answer":"почињати", synonyms:[] },
+        {"title":"начинать","answer":"починати", synonyms:[] },
         {"title":"недооценивать","answer":"потцењивати", synonyms:[] },
         {"title":"нравиться","answer":"свиђати се", synonyms:[] },
         {"title":"обедать","answer":"ручати", synonyms:[] },
@@ -263,7 +264,6 @@ Serbian.Lesson3 = {
         {"title":"оскорблять","answer":"вређати", synonyms:[] },
         {"title":"останавливаться","answer":"заустављати се", synonyms:[] },
         {"title":"отвечать","answer":"одговарати", synonyms:[] },
-        {"title":"отгадать","answer":"одгонетнути", synonyms:[] },
         {"title":"отказываться","answer":"отказивати се", synonyms:[] },
         {"title":"открывать(дверь и т.п.)","answer":"отварати", synonyms:[] },
         {"title":"отправлять","answer":"слати", synonyms:[] },
@@ -272,6 +272,17 @@ Serbian.Lesson3 = {
         {"title":"падать","answer":"падати", synonyms:[] },
         {"title":"переводить(текст)","answer":"преводити", synonyms:[] },
         {"title":"писать","answer":"писати", synonyms:[] },
+
+    ]
+}
+
+Serbian.Lesson3_2 = {
+    LessonType : 'srb',
+    Name : 'Глаголы часть 2',
+    Directory : 'Сербский.Начало',
+    Author : 'El Ege',
+    Version : 1,
+    Words : [
         {"title":"плавать","answer":"пливати", synonyms:[] },
         {"title":"плакать","answer":"плакати", synonyms:[] },
         {"title":"планировать","answer":"планирати", synonyms:[] },
@@ -331,7 +342,6 @@ Serbian.Lesson3 = {
         {"title":"существовать","answer":"постојати", synonyms:[] },
         {"title":"считать(подсчитывать)","answer":"рачунати", synonyms:[] },
         {"title":"торопиться","answer":"журити се", synonyms:[] },
-        {"title":"требовать","answer":"захтевати", synonyms:[] },
         {"title":"требоваться","answer":"требати", synonyms:[] },
         {"title":"трогать","answer":"дирати", synonyms:[] },
         {"title":"убивать","answer":"убијати", synonyms:[] },
