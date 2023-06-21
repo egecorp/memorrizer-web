@@ -91,7 +91,7 @@ class Exam {
         let red = Math.round(100 * (this.Failed.length / this.Words.length))
         this.#LessonProgressProgressBarRed.style.width = red + '%'
 
-        this.#LessonAttempt.innerText =  'Круг ' + this.Attempt + ' осталось ' + (green + red) + ' из ' + this.Words.length;
+        this.#LessonAttempt.innerText =  'Круг ' + this.Attempt + ' готово ' + (this.Done.length + this.Failed.length) + ' из ' + this.Words.length;
 
         if (doNotClearInput !== true) {
             this.#LessonInput.value = ''
