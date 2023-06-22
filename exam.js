@@ -28,7 +28,7 @@ class Exam {
         this.#LessonAttempt = document.getElementById('LessonAttempt')
         this.#LessonInput = document.getElementById('LessonInput')
         this.#complainbutton = document.getElementById('complainbutton')
-        
+
         this.#ResultText = document.getElementById('ResultText')
         this.#ResultSection = document.getElementById('ResultSection')
     }
@@ -83,15 +83,21 @@ class Exam {
         }
         this.#TaskText.innerText = this.CurrentWord.Title
 
-        this.#complainbutton.setAttribute('href', 'mailto:3oko@elege.studio?subject=Complain%20to%20memorizer&body=%20' + this.CurrentWord.Title  +
-        '%20-%20'+ this.CurrentWord.Answer);
+        this.#complainbutton.setAttribute(
+            'href',
+            'mailto:3oko@elege.studio?subject=Complain%20to%20memorizer&body=%20' +
+                this.CurrentWord.Title +
+                '%20-%20' +
+                this.CurrentWord.Answer
+        )
 
         let green = Math.round(100 * (this.Done.length / this.Words.length))
         this.#LessonProgressProgressBarGreen.style.width = green + '%'
         let red = Math.round(100 * (this.Failed.length / this.Words.length))
         this.#LessonProgressProgressBarRed.style.width = red + '%'
 
-        this.#LessonAttempt.innerText =  'Круг ' + this.Attempt + ' готово ' + (this.Done.length + this.Failed.length) + ' из ' + this.Words.length;
+        this.#LessonAttempt.innerText =
+            'Круг ' + this.Attempt + ' готово ' + (this.Done.length + this.Failed.length) + ' из ' + this.Words.length
 
         if (doNotClearInput !== true) {
             this.#LessonInput.value = ''

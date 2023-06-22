@@ -67,6 +67,9 @@ body {
     &[data-icon-name='cross-bold'] {
         mask-image: url(/src/img/icons/symbol/cross-bold.svg);
     }
+    &[data-icon-name='report'] {
+        mask-image: url(/src/img/icons/symbol/report.svg);
+    }
 }
 
 // templates

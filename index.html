@@ -20,16 +20,6 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-
-        <style>
-            #complainbutton{
-                position: absolute;
-                font-size: 3vh;
-                color: white;
-                right: 15px;
-                top: 54px;
-            }
-        </style>
     </head>
     <body class="body">
         <header class="header">
@@ -57,8 +47,10 @@
 
                         <div id="LessonAttempt"></div>
                     </div>
-					
-					<a id="complainbutton" title="Пожаловаться">&#x26A0</a>
+
+                    <a id="complainbutton" title="Пожаловаться">
+                        <i class="icon" data-icon-name="report"></i>
+                    </a>
                 </div>
                 <div id="InputSection">
                     <input type="text" id="LessonInput" autofocus />

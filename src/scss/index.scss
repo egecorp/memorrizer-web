@@ -103,6 +103,7 @@
 }
 
 #TaskSection {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -341,4 +342,17 @@
     width: 100%;
     height: 100%;
     padding: 3px;
+}
+
+#complainbutton {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: #fff;
+
+    .icon {
+        --icon-width: 18px;
+        --icon-height: 18px;
+        --icon-background: var(--white);
+    }
 }
