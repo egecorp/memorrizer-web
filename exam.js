@@ -97,7 +97,13 @@ class Exam {
         this.#LessonProgressProgressBarRed.style.width = red + '%'
 
         this.#LessonAttempt.innerText =
-            'Круг ' + this.Attempt + ' готово ' + (this.Done.length + this.Failed.length) + ' из ' + this.Words.length
+            'Готово ' +
+            (this.Done.length + this.Failed.length) +
+            ' из ' +
+            this.Words.length +
+            ' (Круг ' +
+            this.Attempt +
+            ')'
 
         if (doNotClearInput !== true) {
             this.#LessonInput.value = ''
