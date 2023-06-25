@@ -31,7 +31,7 @@ Serbian.Lesson1 = {
         {"title":"светлый","answer":"светао", synonyms:[] },
         {"title":"тёмный","answer":"таман", synonyms:[] },
         {"title":"яркий","answer":"сјајан", synonyms:[] },
-        {"title":"цветной(карандаш)","answer":"обојeн", synonyms:[] },
+        {"title":"цветной(карандаш)","answer":"обоjен", synonyms:[] },
         {"title":"цветной(фильм)","answer":"у боји", synonyms:[] },
         {"title":"чёрно-белый","answer":"црно-бели", synonyms:[] },
         {"title":"одноцветный","answer":"једнобојан", synonyms:[] },
